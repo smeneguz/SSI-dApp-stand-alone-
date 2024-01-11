@@ -1,53 +1,87 @@
+
 # SSI_dApp
 
-<p align="center">
-This is a decentralized application useful for managing users' digital identity following the Self Sovereign Identity (SSI) method. Specifically, it is a stand-alone, so it can work independently, but it is designed to be integrated with the Data Cellar project. 
-</p>
+<div align="center">
+  <p>
+    <strong>SSI_dApp</strong> is a decentralized application designed for managing users' digital identity using the Self Sovereign Identity (SSI) method. This stand-alone application is optimized for independent use, yet it seamlessly integrates with the Data Cellar project, enhancing its capabilities in digital identity management.
+  </p>
+</div>
+
+## Table of Contents
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+- [Running the Application](#running-the-application)
+  - [Starting the Frontend](#starting-the-frontend)
+  - [Starting the Backend](#starting-the-backend)
+- [License](#license)
 
 ## Getting Started
 
-### Installing mkcert
+### Prerequisites
 
-#### Linux
-```bash
-sudo apt-get install libnss3-tools
-```
+Before installing the SSI_dApp, ensure you have the following tools installed on your system:
 
-#### MacOS
-```bash
-brew install mkcert
-```
+- `mkcert`
+- `OpenSSL`
+- `npm` (Node Package Manager)
 
-#### Windows
-```bash
-choco install mkcert
-```
+### Installation
 
-### Creating Certificates for the Backend
+#### Installing `mkcert`
+
+Install `mkcert` on your system based on your operating system:
+
+- **Linux**
+  ```bash
+  sudo apt-get install libnss3-tools
+  ```
+
+- **MacOS**
+  ```bash
+  brew install mkcert
+  ```
+
+- **Windows**
+  ```bash
+  choco install mkcert
+  ```
+
+#### Installing `OpenSSL`
+
+Install `OpenSSL` using the following commands:
+
+- **Linux**
+  ```bash
+  sudo apt-get install openssl
+  ```
+
+- **MacOS**
+  ```bash
+  brew install openssl
+  ```
+
+- **Windows**
+  ```bash
+  choco install openssl
+  ```
+
+### Configuration
+
+#### Creating Certificates for the Backend
+
+Navigate to the backend directory and create certificates:
+
 ```bash
 cd backend
 mkcert -key-file key.pem -cert-file cert.pem localhost
 cd ..
 ```
 
-### Installing OpenSSL
+#### Creating Certificates for the Frontend
 
-#### Linux
-```bash
-sudo apt-get install openssl
-```
-
-#### MacOS
-```bash
-brew install openssl
-```
-
-#### Windows
-```bash
-choco install openssl
-```
-
-### Creating Certificates for the Frontend
+Generate the necessary certificates for the frontend:
 
 ```bash
 cd frontend
@@ -57,7 +91,9 @@ openssl rsa -in key.pem -out key.key
 cd ..
 ```
 
-### Installing dependencies
+#### Installing dependencies
+
+Install the necessary dependencies for both the frontend and backend:
 
 ```bash
 cd frontend
@@ -67,11 +103,13 @@ cd backend
 npm install
 ```
 
-## Running
+## Running the Application
 
-Open two terminals: one for the frontend and one for the backend.
+Open two separate terminal windows or tabs: one for running the frontend and another for the backend.
 
 ### Starting the Frontend
+
+In the frontend directory, start the application:
 
 ```bash
 cd frontend
@@ -80,12 +118,13 @@ npm start
 
 ### Starting the Backend
 
+Similarly, in the backend directory, start the server:
+
 ```bash
 cd backend
 node server.js
 ```
 
-
 ## License
 
-This project is distributed under the [MIT license](./LICENSE). Please read the [LICENSE](./LICENSE) file for details.
+This project is licensed under the [MIT License](./LICENSE). For more details, please refer to the [LICENSE](./LICENSE) file.
